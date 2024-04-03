@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { MissionListComponent } from './missionlist/missionlist.component';
-import { MissionDetailsComponent } from './missiondetails/missiondetails.component';
+import { MissionlistComponent } from './missionlist/missionlist.component';
+import { MissiondetailsComponent } from './missiondetails/missiondetails.component';
 
 export const routes: Routes = [
-  { path: '', component: MissionListComponent },
-  { path: 'detail/:id', component: MissionDetailsComponent },
+  { path: '', component: MissionlistComponent },
+  { path: 'detail/:id', component: MissiondetailsComponent },
   // 他のルート
 ];
 
