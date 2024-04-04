@@ -1,115 +1,102 @@
-h1 {
-    color: #212529;
-}
-
-.filter-header-wrap {
+.container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .header-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.filter-header-wrap a {
-    cursor: pointer;
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-.filter-header-wrap h3 {
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.card-body {
-    position: relative;
-    padding: 20px;
-}
-
-.filter-section-wrapper h4 {
-    text-align: center;
-    margin: 40px 0 25px;
-    font-weight: 500;
-}
-
-.filter-sub-title {
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.filter-sub-title h4 {
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.filter-sub-title h4::after {
-    position: absolute;
-    content: "";
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70%;
-    background: #007bff;
-}
-
-.filter-buttons {
-    list-style: none;
+    margin-bottom: 2rem;
+  }
+  
+  .header-row h1 {
+    font-size: 2.5rem;
+  }
+  
+  .back-button {
+    padding: 0.5rem 1rem;
+    background-color: #ff6f61; /* SpaceX Red */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+  
+  .filter-section {
+    margin-bottom: 1rem;
+  }
+  
+  .filter-card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eceff1;
+    padding: 0.75rem 1.25rem;
+  }
+  
+  .card-header h3 {
     margin: 0;
-    padding: 0 15px;
+  }
+  
+  .clear-filter {
+    background: none;
+    border: none;
+    color: #ff6f61; /* SpaceX Red */
+    cursor: pointer;
+  }
+  
+  .filter-options {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .filter-options li {
+    padding: 0.5rem 0;
+    cursor: pointer;
+  }
+  
+  .filter-options li.active {
+    color: #ff6f61; /* SpaceX Red */
+  }
+  
+  .mission-cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-.filter-buttons li {
-    background: #0069d9;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    font-weight: 500;
-    width: calc(50% - 20px);
-}
-
-.filter-buttons li:hover, .filter-buttons li.active {
-    background-color: #0056b3;
-}
-
-.loading-text {
-    color: #0069d9;
-    font-size: 20px;
-}
-
-.card, .launch-card {
-    background-color: #f8f9fa;
+  }
+  
+  .launch-card {
+    background-color: white;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.card-2 {
-    margin-bottom: 30px;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: 20px;
-}
-
-.card-body-2 h5 {
-    font-size: 18px;
-    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .launch-card figure {
     text-align: center;
-}
-
-.card-body-2 ul li h6 {
-    display: flex;
-    font-size: 14px;
-    margin-bottom: 0;
-}
-
-.card-body-2 ul li h6 p {
-    margin-bottom: 0;
-}
+    margin: 0;
+  }
+  
+  .launch-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .mission-details {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .mission-details li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .mission-details li strong {
+    font-weight: bold;
+  }
+  

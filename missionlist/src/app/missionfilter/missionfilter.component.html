@@ -1,90 +1,52 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-12" style="margin-bottom: 1rem; display: flex; justify-content: space-between;">
-            <h1 class="my-3" style="font-size: xx-large;">SpaceX Launch Programs</h1>
-            <a routerLink="/" mat-raised-button color="warn" style="margin-top: 12px; margin-right: 45rem;">Back</a>
-        </div>
-
-        <div class="col-md-3">
-            <aside class="filter-section-wrapper">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="filter-header-wrap">
-                            <h3>Filters</h3>
-                            <a (click)="removeFilter()">Clear</a>
-                        </div>
-                        <div class="filter-sub-title">
-                            <h4>Launch Year</h4>
-                        </div>
-                        <ul class="filter-buttons">
-                            <li [ngClass]="launchYearSelectedIndex === i ? 'active' : ''"
-                                *ngFor="let year of launchYears; let i = index" (click)="missionFilter(i, year)">
-                                {{year}}</li>
-                        </ul>
-                        <div class="filter-sub-title">
-                            <h4>Successful Launch</h4>
-                        </div>
-                        <ul class="filter-buttons">
-                            <li (click)="successLaunchFilter(true)">True</li>
-                            <li (click)="successLaunchFilter(false)">False</li>
-                        </ul>
-                        <div class="filter-sub-title">
-                            <h4>Successfull Land</h4>
-                        </div>
-                        <ul class="filter-buttons">
-                            <li (click)="successLandingFilter(true)">True</li>
-                            <li (click)="successLandingFilter(false)">False</li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
-        </div>
-        <div class="col-md-8">
-            <div class="row">
-                <div *ngFor="let data of listMission" class="col-md-4">
-                    <div class="launch-card">
-                        <div class="card-2">
-                            <div class="card-body-2">
-                                <figure style="padding-top: 1rem;">
-                                    <img src="{{data.links.mission_patch_small}}" alt="{{data.rocket.rocket_name}}"
-                                        width="250px" height="250px">
-                                </figure>
-
-                                <h5>{{data.mission_name}} #{{data.flight_number}}</h5>
-
-                                <ul style="padding-left: .8rem; ">
-                                    <li>
-                                        <h6><strong>Mission Ids: </strong>
-                                            <p style="padding-left: 3.9rem;">{{data.mission_id }}</p>
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6><strong>Rocket Name: </strong>
-                                            <p style="padding-left: 3.4rem;">{{data.rocket.rocket_name}}</p>
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6><strong>Launch Year: </strong>
-                                            <p style="padding-left: 3.8rem;">{{data.launch_year}}</p>
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6><strong>Successful Launch: </strong>
-                                            <p style="padding-left: 1.4rem;">{{data.launch_success ? "Yes" : "No"}}
-                                            </p>
-                                        </h6>
-                                    </li>
-                                    <li>
-                                        <h6><strong>Successful Landing: </strong>
-                                            <p style="padding-left: 1.2rem; padding-bottom: 1.6rem;">{{data.rocket.first_stage.cores[0].landing_intent ? "Yes" : "No Data"}}</p>
-                                        </h6>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="row header-row">
+      <h1>SpaceX Launch Programs</h1>
+      <a routerLink="/" class="back-button">Back</a>
     </div>
-</div>
+  
+    <div class="row content-row">
+      <div class="col-md-3">
+        <aside class="filter-section">
+          <div class="card filter-card">
+            <div class="card-header">
+              <h3>Filters</h3>
+              <button class="clear-filter" (click)="removeFilter()">Clear</button>
+            </div>
+            <div class="card-body">
+              <!-- Repeat for each filter section (Launch Year, Successful Launch, Successful Land) -->
+              <div class="filter-section">
+                <h4>Launch Year</h4>
+                <ul class="filter-options">
+                  <!-- Repeat for each filter button -->
+                  <li *ngFor="let year of launchYears; let i = index"
+                      [ngClass]="{'active': launchYearSelectedIndex === i}"
+                      (click)="missionFilter(i, year)">{{ year }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+  
+      <div class="col-md-8">
+        <div class="row mission-cards">
+          <div *ngFor="let data of listMission" class="col-md-4">
+            <div class="launch-card">
+              <figure>
+                <img src="{{data.links.mission_patch_small}}" alt="{{data.rocket.rocket_name}}">
+              </figure>
+              <h5>{{data.mission_name}} #{{data.flight_number}}</h5>
+              <ul class="mission-details">
+                <li><strong>Mission Ids:</strong> {{data.mission_id }}</li>
+                <li><strong>Rocket Name:</strong> {{data.rocket.rocket_name}}</li>
+                <li><strong>Launch Year:</strong> {{data.launch_year}}</li>
+                <li><strong>Successful Launch:</strong> {{data.launch_success ? "Yes" : "No"}}</li>
+                <li><strong>Successful Landing:</strong> {{data.rocket.first_stage.cores[0].landing_intent ? "Yes" : "No Data"}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

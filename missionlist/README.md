@@ -1,4 +1,4 @@
-# 101403883-lab-test2-comp3133
+# 101371241-lab-test2-comp3133
 
 ## Requirement
 
@@ -10,11 +10,6 @@ In order to run the project, your computer needs to have these packages and envi
 
 ## How to set up the application
 
-First, you need to clone the project to your local machine
-
-```bash
-git clone https://github.com/enes-sertkan/101403883-lab-test2-comp3133.git
-```
 
 Run the following commands to install all dependencies :
 
